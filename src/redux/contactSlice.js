@@ -21,6 +21,7 @@ const initialStateContacts = {
 const contactSlice = createSlice({
   name: 'contacts',
   initialState: initialStateContacts,
+  reeducer: {},
   extraReducers: {
     [fetchContacts.pending]: handlePending,
     [fetchContacts.fulfilled](state, action) {
