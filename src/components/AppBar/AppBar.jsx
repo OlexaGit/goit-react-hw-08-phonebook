@@ -10,7 +10,7 @@ const AppBar = () => {
     <header className={css.header}>
       <Navigation />
       {/* {isLoggedIn ? <UserMenu /> : <AuthNav />} */}
-      {isLoggedIn ? <HomeView /> : <AuthNav />}
+      {isLoggedIn ? <UserMenu /> : <AuthNav />}
     </header>
     // <header>
     //   <h1>Phonebook</h1>
