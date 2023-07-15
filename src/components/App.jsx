@@ -18,11 +18,11 @@ export const App = () => {
   return (
     <div>
       <AppBar />
-      {/* <Routes>
+      <Routes>
         <Route path="/" Component={<HomeView />} />
-        <Route path="/register" Component={<RegisterView />} />
-        <Route path="/login" Component={<LoginView />} />
-      </Routes> */}
+        {/* <Route path="/register" Component={<RegisterView />} /> */}
+        {/* <Route path="/login" Component={<LoginView />} /> */}
+      </Routes>
       <section>
         <Form />
       </section>

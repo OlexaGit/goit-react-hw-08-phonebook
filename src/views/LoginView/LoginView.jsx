@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { nanoid } from 'nanoid';
+import { logIn } from 'redux/auth/authOperations';
 import css from './LoginView.module.css';
 
 const LoginView = () => {
@@ -17,7 +18,7 @@ const LoginView = () => {
 
   const handleSubmit = evt => {
     evt.preventDefault();
-    // dispatch(authOperations.login({ email, password }));
+    dispatch(logIn({ email, password }));
     reset();
   };
 
@@ -51,7 +52,7 @@ const LoginView = () => {
           onChange={handleInputChange}
           id={numberInputId}
           pattern="\+?\d{1,4}?[\-.\s]?\(?\d{1,3}?\)?[\-.\s]?\d{1,4}[\-.\s]?\d{1,4}[\-.\s]?\d{1,9}"
-          title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
+          title="Password must be digits and can contain spaces, dashes, parentheses."
           required
         />
         {/* <button className={css.formButton} type="submit">
