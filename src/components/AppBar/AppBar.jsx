@@ -1,4 +1,3 @@
-import HomeView from 'views/HomeView/HomeView';
 import css from './AppBar.module.css';
 import { Navigation } from 'components/Navigation/Navigation';
 import { useAuth } from 'hooks';
@@ -12,10 +11,6 @@ const AppBar = () => {
       <Navigation />
       {isLoggedIn ? <UserMenu /> : <AuthNav />}
     </header>
-    // <header>
-    //   <h1>Phonebook</h1>
-    //   <HomeView />
-    // </header>
   );
 };
 export default AppBar;
