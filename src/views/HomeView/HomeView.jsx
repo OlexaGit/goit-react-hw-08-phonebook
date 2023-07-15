@@ -1,9 +1,10 @@
 import React from 'react';
+import css from './HomeView.module.css';
 
 const HomeView = () => {
   return (
-    <div>
-      <h1>HomeView</h1>
+    <div className={css.form}>
+      <h1>Phonebook</h1>
     </div>
   );
 };

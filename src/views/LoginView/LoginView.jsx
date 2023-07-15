@@ -29,7 +29,7 @@ const LoginView = () => {
 
   return (
     <div>
-      <h1>Page Login</h1>
+      <h1>Log in</h1>
       <form onSubmit={handleSubmit} className={css.form}>
         <label htmlFor={nameInputId}>Email</label>
         <input
@@ -55,9 +55,9 @@ const LoginView = () => {
           title="Password must be digits and can contain spaces, dashes, parentheses."
           required
         />
-        {/* <button className={css.formButton} type="submit">
-          Add contact
-        </button> */}
+        <button className={css.formButton} type="submit">
+          Log in
+        </button>
       </form>
     </div>
   );
