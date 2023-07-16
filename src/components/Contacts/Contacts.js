@@ -40,6 +40,8 @@ export const Contacts = () => {
     arrayContacts = items.filter(contact =>
       contact.name.toLocaleLowerCase().includes(normalizedFilter)
     );
+    if (arrayContacts.length === 0)
+      return <h4 className={css.form}>Nothing found!</h4>;
   }
 
   return (

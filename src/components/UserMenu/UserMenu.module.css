@@ -5,5 +5,19 @@
 }
 
 .username {
-  font-weight: 700;
+  padding: 2px;
+  font-weight: 400;
+  text-decoration: underline;
+  background-color: bisque;
+}
+
+.formButton {
+  margin-left: 20px;
+  padding: 6px;
+  font-size: 18px;
+  border-radius: 6px;
+  background-color: bisque;
+}
+.formButton:hover {
+  box-shadow: 0px 4px 10px 4px #9e9e9e;
 }

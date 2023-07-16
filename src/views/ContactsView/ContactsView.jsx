@@ -20,7 +20,7 @@ const ContactsView = () => {
         <Form />
       </section>
       <section>
-        <h2>Contacts</h2>
+        <h2>Contacts 📖</h2>
         <Filter />
         <Contacts />
       </section>

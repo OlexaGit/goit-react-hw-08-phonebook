@@ -18,6 +18,7 @@ export const Filter = ({ searchInputId }) => {
         name="filter"
         onChange={changeFilter}
         id={searchInputId}
+        placeholder="input name"
       />
     </div>
   );
