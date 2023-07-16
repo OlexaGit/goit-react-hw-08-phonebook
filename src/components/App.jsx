@@ -53,6 +53,3 @@ export const App = () => {
     </Routes>
   );
 };
-// rosie Simp
-// rosie12simpyui5645@com.com
-// 1234567895rdxXDR%
