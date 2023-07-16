@@ -39,8 +39,8 @@ const LoginView = () => {
           value={email}
           onChange={handleInputChange}
           id={nameInputId}
-          pattern="^[a-zA-Zа-яА-Я]+(([' \-][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-          title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
+          // pattern="^[a-zA-Zа-яА-Я]+(([' \-][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
+          // title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
           required
         />
         <label htmlFor={numberInputId}>Password</label>
@@ -51,8 +51,8 @@ const LoginView = () => {
           value={password}
           onChange={handleInputChange}
           id={numberInputId}
-          pattern="\+?\d{1,4}?[\-.\s]?\(?\d{1,3}?\)?[\-.\s]?\d{1,4}[\-.\s]?\d{1,4}[\-.\s]?\d{1,9}"
-          title="Password must be digits and can contain spaces, dashes, parentheses."
+          // pattern="\+?\d{1,4}?[\-.\s]?\(?\d{1,3}?\)?[\-.\s]?\d{1,4}[\-.\s]?\d{1,4}[\-.\s]?\d{1,9}"
+          // title="Password must be digits and can contain spaces, dashes, parentheses."
           required
         />
         <button className={css.formButton} type="submit">

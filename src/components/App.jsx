@@ -10,8 +10,7 @@ import { RestrictedRoute } from './RestrictedRoute';
 import { PrivateRoute } from './PrivateRoute';
 import { refreshUser } from 'redux/auth/authOperations';
 import { useAuth } from 'hooks';
-
-import AppBar from './AppBar/AppBar';
+import Loader from './Loader/Loader';
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -22,7 +21,9 @@ export const App = () => {
     dispatch(refreshUser());
   }, [dispatch]);
   return isRefreshing ? (
-    <h1>Loading...</h1>
+    <div>
+      <Loader />
+    </div>
   ) : (
     <Routes>
       <Route path="/" element={<SharedLayout />}>
@@ -52,3 +53,6 @@ export const App = () => {
     </Routes>
   );
 };
+// rosie Simp
+// rosie12simpyui5645@com.com
+// 1234567895rdxXDR%

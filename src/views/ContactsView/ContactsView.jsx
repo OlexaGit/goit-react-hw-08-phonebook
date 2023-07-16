@@ -15,9 +15,7 @@ const ContactsView = () => {
 
   return (
     <div>
-      <header>
-        <h1>Phonebook</h1>
-      </header>
+      <h1>Phonebook</h1>
       <section>
         <Form />
       </section>
