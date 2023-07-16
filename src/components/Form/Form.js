@@ -23,8 +23,7 @@ export const Form = () => {
     evt.preventDefault();
     const contact = {
       name,
-      number,
-      // id: nanoid(),
+      number,      
     };
     const normalizedFind = name.toLocaleLowerCase();
     items.find(contact => contact.name.toLocaleLowerCase() === normalizedFind)

@@ -2,7 +2,6 @@ import { useSelector, useDispatch } from 'react-redux';
 import Loader from 'components/Loader/Loader';
 import PropTypes from 'prop-types';
 import { deleteContact } from 'redux/operations';
-// import { selectContacts } from 'redux/selectors';
 import { selectContacts } from 'redux/contactSlice';
 import { selectFilterContacts } from 'redux/selectors';
 import css from './Contacts.module.css';
@@ -12,6 +11,7 @@ export const Contacts = () => {
   const { items, isLoading, error } = useSelector(selectContacts);
   const { filter } = useSelector(selectFilterContacts);
   const handleDelete = id => dispatch(deleteContact(id));
+  let item = 1;
 
   if (isLoading && !error) {
     return (
@@ -47,9 +47,9 @@ export const Contacts = () => {
   return (
     <div className={css.form}>
       <ul>
-        {arrayContacts.map(({ id, name, number }) => (
+        {arrayContacts.map(({ id, name, number }, index) => (
           <li key={id} className={css.formList}>
-            @ {name}: {number}
+            {index + item}. {name}: {number}
             <button
               className={css.formButton}
               type="button"

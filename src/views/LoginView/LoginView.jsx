@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { nanoid } from 'nanoid';
 import { logIn } from 'redux/auth/authOperations';
+import { useAuth } from 'hooks';
 import css from './LoginView.module.css';
 
 const LoginView = () => {
@@ -10,6 +11,7 @@ const LoginView = () => {
   const [password, setPassword] = useState('');
   const nameInputId = nanoid();
   const numberInputId = nanoid();
+  const { IsErrorLogin } = useAuth();
 
   const handleInputChange = event => {
     const { name, value } = event.currentTarget;
@@ -27,6 +29,16 @@ const LoginView = () => {
     setPassword('');
   };
 
+  if (IsErrorLogin) {
+    setTimeout(() => {
+      return (
+        <div>
+          <h5>Invalid Email address or Password!</h5>
+        </div>
+      );
+    }, '3000');
+  }
+
   return (
     <div>
       <h1>Log in</h1>
@@ -39,8 +51,8 @@ const LoginView = () => {
           value={email}
           onChange={handleInputChange}
           id={nameInputId}
-          // pattern="^[a-zA-Zа-яА-Я]+(([' \-][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-          // title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
+          pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+          title="Invalid email address"
           required
         />
         <label htmlFor={numberInputId}>Password</label>
@@ -51,14 +63,20 @@ const LoginView = () => {
           value={password}
           onChange={handleInputChange}
           id={numberInputId}
-          // pattern="\+?\d{1,4}?[\-.\s]?\(?\d{1,3}?\)?[\-.\s]?\d{1,4}[\-.\s]?\d{1,4}[\-.\s]?\d{1,9}"
-          // title="Password must be digits and can contain spaces, dashes, parentheses."
+          autoComplete="current-password"
+          pattern="\+?\d{1,4}?[\-.\s]?\(?\d{1,3}?\)?[\-.\s]?\d{1,4}[\-.\s]?\d{1,4}[\-.\s]?\d{1,9}"
+          title="Input Password and Submit [8 to 25 characters which contain at least one lowercase letter, one uppercase letter, one numeric digit, and one special character]"
           required
         />
         <button className={css.formButton} type="submit">
           Log in
         </button>
       </form>
+      {IsErrorLogin && (
+        <div>
+          <h5>Invalid Email address or Password!</h5>
+        </div>
+      )}
     </div>
   );
 };
