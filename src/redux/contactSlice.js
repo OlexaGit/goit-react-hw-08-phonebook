@@ -21,31 +21,32 @@ const initialStateContacts = {
 const contactSlice = createSlice({
   name: 'contacts',
   initialState: initialStateContacts,
-  // reeducer: {},
-  extraReducers: {
-    [fetchContacts.pending]: handlePending,
-    [fetchContacts.fulfilled](state, action) {
-      state.contacts.isLoading = false;
-      state.contacts.error = null;
-      state.contacts.items = action.payload;
-    },
-    [fetchContacts.rejected]: handleRejected,
-    [deleteContact.pending]: handlePending,
-    [deleteContact.fulfilled](state, action) {
-      state.contacts.isLoading = false;
-      state.contacts.error = null;
-      state.contacts.items = state.contacts.items.filter(
-        ({ id }) => id !== action.payload.id
-      );
-    },
-    [deleteContact.rejected]: handleRejected,
-    [addContact.pending]: handlePending,
-    [addContact.fulfilled](state, { payload: newContact }) {
-      state.contacts.isLoading = false;
-      state.contacts.error = null;
-      state.contacts.items = [...state.contacts.items, newContact];
-    },
-    [addContact.rejected]: handleRejected,
+
+  extraReducers: builder => {
+    builder
+      .addCase(fetchContacts.pending, handlePending)
+      .addCase(fetchContacts.fulfilled, (state, action) => {
+        state.contacts.isLoading = false;
+        state.contacts.error = null;
+        state.contacts.items = action.payload;
+      })
+      .addCase(fetchContacts.rejected, handleRejected)
+      .addCase(deleteContact.pending, handlePending)
+      .addCase(deleteContact.fulfilled, (state, action) => {
+        state.contacts.isLoading = false;
+        state.contacts.error = null;
+        state.contacts.items = state.contacts.items.filter(
+          ({ id }) => id !== action.payload.id
+        );
+      })
+      .addCase(deleteContact.rejected, handleRejected)
+      .addCase(addContact.pending, handlePending)
+      .addCase(addContact.fulfilled, (state, { payload: newContact }) => {
+        state.contacts.isLoading = false;
+        state.contacts.error = null;
+        state.contacts.items = [...state.contacts.items, newContact];
+      })
+      .addCase(addContact.rejected, handleRejected);
   },
 });
 
