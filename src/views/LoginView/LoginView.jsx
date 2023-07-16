@@ -29,16 +29,6 @@ const LoginView = () => {
     setPassword('');
   };
 
-  if (IsErrorLogin) {
-    setTimeout(() => {
-      return (
-        <div>
-          <h5>Invalid Email address or Password!</h5>
-        </div>
-      );
-    }, '3000');
-  }
-
   return (
     <div>
       <h1>Log in</h1>
