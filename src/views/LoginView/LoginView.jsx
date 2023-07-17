@@ -41,7 +41,7 @@ const LoginView = () => {
           value={email}
           onChange={handleInputChange}
           id={nameInputId}
-          pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+          pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$"
           title="Invalid email address"
           required
         />

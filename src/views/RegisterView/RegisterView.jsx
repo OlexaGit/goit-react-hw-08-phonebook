@@ -28,7 +28,7 @@ const RegisterView = () => {
           type="email"
           name="email"
           id="email"
-          pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+          pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$"
           title="Invalid email address"
           className={css.formInput}
         />
